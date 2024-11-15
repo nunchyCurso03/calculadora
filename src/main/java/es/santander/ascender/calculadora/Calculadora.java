@@ -19,7 +19,7 @@ public class Calculadora {
 
     // Método para sumar dos valores
     public double sumar(double sumando1, double sumando2) {
-        resultado = 0; // Resetea el resultado
+        reset();
         resultado = sumando1 + sumando2;
         return resultado;
 
@@ -34,7 +34,7 @@ public class Calculadora {
 
     // Método para restar dos valores
     public double restar(double minuendo, double sustraendo) {
-        resultado = 0; // Resetea el resultado
+        reset();
         resultado = minuendo - sustraendo;
         return resultado;
 
@@ -49,7 +49,7 @@ public class Calculadora {
 
     // Método para multiplicar dos valores
     public double multiplicar(double multiplicando, double multiplicador) {
-        resultado = 0; // Resetea el resultado
+        reset();
         resultado = multiplicando * multiplicador;
         return resultado;
 
@@ -67,13 +67,18 @@ public class Calculadora {
 
     // Método para dividir dos valores
     public double dividir(double dividendo, double divisor) throws Exception {
-        resultado = 0; // Resetea el resultado
+        reset(); // Resetea el resultado
         if(divisor ==0.0){
             throw new Exception("No se puede dividir por cero");
         }
         resultado = dividendo / divisor;
         return resultado;
 
+    }
+
+    //Método para resetear el resultado a cero
+    private void reset() {
+        this.resultado = 0;
     }
 
     //Get para obtener el último resultado
